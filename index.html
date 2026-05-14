@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soumerian</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background-image: url("images/eren.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* overlay */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 60px;
+}
+
+/* CARD */
+.card {
+    position: relative;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* imagine card */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* gradient */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    z-index: -1;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* IMAGINI */
+.anime::before {
+    background-image: url("images/marin.jpg");
+}
+
+.filme::before {
+    background-image: url("images/delorean.jpg");
+}
+
+.sport::before {
+    background-image: url("images/liverpool.png");
+}
+
+.random::before {
+    background-image: url("images/mosaic.jpg");
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📂 Soumerian</h1>
+
+<div class="grid">
+    <a class="card anime" href="anime.html">🎌 Anime</a>
+    <a class="card filme" href="filme.html">🎬 Filme</a>
+    <a class="card sport" href="sport.html">⚽ Sport</a>
+    <a class="card random" href="random.html">🎲 Random</a>
+</div>
+
+</div>
+
+</body>
+</html>

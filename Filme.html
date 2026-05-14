@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filme</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background-image: url("images/delorean.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* overlay */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.75);
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 36px;
+}
+
+/* back */
+.back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* GRID ca Netflix */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* CARD */
+.card {
+    position: relative;
+    height: 260px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+/* imagine */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s;
+}
+
+/* gradient */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+/* text */
+.card span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* hover efect Netflix */
+.card:hover {
+    transform: scale(1.08);
+}
+
+.card:hover::before {
+    transform: scale(1.1);
+}
+
+/* IMAGINI */
+.fmovies::before {
+    background-image: url("images/fmovies.jpg");
+}
+
+.soap::before {
+    background-image: url("images/soap.jpg");
+}
+
+.lookmovie::before {
+    background-image: url("images/lookmovie.jpg");
+}
+
+.imdb::before {
+    background-image: url("images/imdb.jpg");
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<a class="back" href="index.html">⬅ Înapoi</a>
+
+<h1>🎬 Filme</h1>
+
+<div class="grid">
+
+    <a class="card fmovies" href="https://fmovies.to" target="_blank">
+        <span>FMovies</span>
+    </a>
+
+    <a class="card soap" href="https://soap2day.rs" target="_blank">
+        <span>Soap2Day</span>
+    </a>
+
+    <a class="card lookmovie" href="https://lookmovie2.to" target="_blank">
+        <span>LookMovie</span>
+    </a>
+
+    <a class="card imdb" href="https://imdb.com" target="_blank">
+        <span>IMDb</span>
+    </a>
+
+</div>
+
+</div>
+
+</body>
+</html>
